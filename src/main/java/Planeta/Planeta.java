@@ -2,6 +2,7 @@ package Planeta;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -19,5 +20,26 @@ public abstract class Planeta {
         return habitantes.stream()
             .filter(habitante -> habitante.esDestacado())
             .collect(Collectors.toList());
+    }
+
+    public Integer getValorInicialDefensa() {
+        return (int) habitantes.stream()
+            .filter(habitante -> habitante.getPotencia() >= 30)
+            .count();
+    }
+
+    public Integer getPotencia() {
+        return habitantes.stream().mapToInt(habitante -> habitante.getPotencia())
+            .sum();
+    }
+
+    public boolean esCulto() {
+        return cantMuseos > 2 && todosLosHabitantesTienenAlmenos(10, Persona::getInteligencia);
+    }
+
+    private boolean todosLosHabitantesTienenAlmenos(Integer umbral, 
+            Function<Persona, Integer> getter) {
+        return habitantes.stream()
+                .allMatch(habitante -> getter.apply(habitante) >= umbral);
     }
 }
