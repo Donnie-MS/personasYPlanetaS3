@@ -1,5 +1,7 @@
 package Persona;
 
+import Planeta.Planeta;
+
 public class Persona {
     private Integer edad;
     
@@ -28,6 +30,8 @@ public class Persona {
         return 25 == edad || 35 == edad;
     }
 
+    public  void ofrecerTributo(Planeta planeta) {
 
+    }
 
 }

@@ -2,9 +2,7 @@ package Planeta;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -14,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import Persona.Atleta;
 import Persona.Docente;
 import Persona.Persona;
-import Planeta.Planeta;
+
 
 public class PlanetaTest {
     Persona julieta = new Persona(42);

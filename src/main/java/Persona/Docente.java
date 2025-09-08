@@ -1,5 +1,7 @@
 package Persona;
 
+import Planeta.Planeta;
+
 public class Docente extends Persona {
     private Integer cantCursosDados;
 
@@ -19,5 +21,10 @@ public class Docente extends Persona {
     @Override
     public boolean esDestacado() {
         return cantCursosDados > 3;
+    }
+
+    @Override
+    public void ofrecerTributo(Planeta unPlaneta) {
+        unPlaneta.fundarMuseo();
     }
 }
