@@ -3,17 +3,22 @@ package Planeta;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Collector;
+
 import java.util.stream.Collectors;
 
 import Persona.Persona;
 
-public abstract class Planeta {
+public class Planeta {
     private List<Persona> habitantes = new ArrayList<>();
     private Integer cantMuseos;
 
     public Planeta(Integer cantMuseos) {
+        this(cantMuseos, new ArrayList<>());
+    }
+
+    public Planeta(Integer cantMuseos, List<Persona> habitantes) {
         this.cantMuseos = cantMuseos;
+        this.habitantes.addAll(habitantes);
     }
 
     public List<Persona> getDelegacionDiplomatica() {
@@ -21,6 +26,7 @@ public abstract class Planeta {
             .filter(habitante -> habitante.esDestacado())
             .collect(Collectors.toList());
     }
+    
 
     public Integer getValorInicialDefensa() {
         return (int) habitantes.stream()

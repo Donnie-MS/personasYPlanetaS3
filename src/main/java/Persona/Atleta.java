@@ -1,11 +1,17 @@
 package Persona;
 
 public class Atleta extends Persona{
-    private Integer masaMuscular = 4;
-    private Integer cantTecnicasConocidas = 2;
+    private Integer masaMuscular;
+    private Integer cantTecnicasConocidas;
 
     public Atleta(Integer edad) {
+        this(edad, 4, 2);
+    }
+
+    public Atleta(Integer edad, Integer masaMuscular, Integer cantTecnicasConocidas) {
         super(edad);
+        this.masaMuscular = masaMuscular;
+        this.cantTecnicasConocidas = cantTecnicasConocidas;
     }
 
     public Integer getMasaMuscular() {

@@ -1,10 +1,15 @@
 package Persona;
 
 public class Docente extends Persona {
-    private Integer cantCursosDados = 0;
+    private Integer cantCursosDados;
 
     public Docente(Integer edad) {
+        this(edad, 0);
+    }
+
+    public Docente(Integer edad, Integer cantCursosDados) {
         super(edad);
+        this.cantCursosDados = cantCursosDados;
     }
 
     @Override
